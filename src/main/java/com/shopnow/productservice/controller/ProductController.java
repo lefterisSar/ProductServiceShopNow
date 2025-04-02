@@ -3,6 +3,7 @@ package com.shopnow.productservice.controller;
 import com.shopnow.productservice.dto.ProductRequest;
 import com.shopnow.productservice.entity.Product;
 import com.shopnow.productservice.service.ProductService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/products")
 @RequiredArgsConstructor
+@Tag(name = "Products", description = "Operations related to product catalog")
 public class ProductController {
 
     private final ProductService productService;
