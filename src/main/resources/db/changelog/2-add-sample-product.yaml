@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-sample-product
+      author: you
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  value: 123e4567-e89b-12d3-a456-426614174000
+              - column:
+                  name: name
+                  value: Sample Product
+              - column:
+                  name: description
+                  value: First seeded product
+              - column:
+                  name: price
+                  valueNumeric: 49.99
+              - column:
+                  name: stock
+                  valueNumeric: 10

@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-user-description
+      author: Lefteris Saridakis
+      changes:
+        - addColumn:
+            tableName: products
+            columns:
+              - column:
+                  name: category
+                  type: VARCHAR(255)
+                  defaultValue: 'Uncategorized'
+                  constraints:
+                    nullable: false
