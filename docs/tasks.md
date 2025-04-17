@@ -4,7 +4,7 @@ This document contains a list of actionable improvement tasks for the ShopNow Pr
 
 ## Architecture Improvements
 
-- [ ] Implement a proper error handling mechanism with custom exceptions and a global exception handler
+- [x] Implement a proper error handling mechanism with custom exceptions and a global exception handler
 - [ ] Add a caching layer for frequently accessed products
 - [ ] Implement pagination for product listing endpoints
 - [ ] Add sorting and filtering capabilities to product endpoints
@@ -16,9 +16,9 @@ This document contains a list of actionable improvement tasks for the ShopNow Pr
 ## Security Improvements
 
 - [ ] Move sensitive configuration (database credentials, JWT secret) to environment variables or a secure vault
-- [ ] Fix JWT expiration time (currently set to 11111ms which is about 11 seconds, not 1 day)
-- [ ] Implement token expiration check in JwtTokenUtil
-- [ ] Change JwtAuthFilter to extend OncePerRequestFilter instead of GenericFilter
+- [x] Fix JWT expiration time (currently set to 11111ms which is about 11 seconds, not 1 day)
+- [x] Implement token expiration check in JwtTokenUtil
+- [x] Change JwtAuthFilter to extend OncePerRequestFilter instead of GenericFilter
 - [ ] Add CSRF protection for non-GET endpoints
 - [ ] Implement proper password encoding for user authentication (if added)
 - [ ] Add security headers (Content-Security-Policy, X-XSS-Protection, etc.)
@@ -26,11 +26,11 @@ This document contains a list of actionable improvement tasks for the ShopNow Pr
 
 ## Code Quality Improvements
 
-- [ ] Add category field to ProductRequest DTO to match Product entity requirements
+- [x] Add category field to ProductRequest DTO to match Product entity requirements
 - [ ] Create proper DTOs for responses instead of returning entity objects directly
 - [ ] Implement validation for all incoming DTOs
-- [ ] Replace generic RuntimeException with specific exceptions
-- [ ] Add proper documentation (Javadoc) to all classes and methods
+- [x] Replace generic RuntimeException with specific exceptions
+- [x] Add proper documentation (Javadoc) to all classes and methods
 - [ ] Fix inconsistent naming in Liquibase changesets (e.g., "add-user-description" for adding category)
 - [ ] Implement proper null checks and defensive programming
 - [ ] Add logging for important operations and errors
