@@ -1,11 +1,12 @@
 package com.shopnow.productservice;
 
+import com.shopnow.productservice.config.DatasourceProperties;
 import com.shopnow.productservice.config.JwtProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
-@EnableConfigurationProperties(JwtProperties.class)
+@EnableConfigurationProperties({JwtProperties.class, DatasourceProperties.class})
 @SpringBootApplication
 public class ProductServiceApplication {
 
