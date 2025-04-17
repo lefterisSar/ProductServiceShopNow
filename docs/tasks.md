@@ -15,7 +15,7 @@ This document contains a list of actionable improvement tasks for the ShopNow Pr
 
 ## Security Improvements
 
-- [ ] Move sensitive configuration (database credentials, JWT secret) to environment variables or a secure vault
+- [x] Move sensitive configuration (database credentials, JWT secret) to environment variables or a secure vault
 - [x] Fix JWT expiration time (currently set to 11111ms which is about 11 seconds, not 1 day)
 - [x] Implement token expiration check in JwtTokenUtil
 - [x] Change JwtAuthFilter to extend OncePerRequestFilter instead of GenericFilter

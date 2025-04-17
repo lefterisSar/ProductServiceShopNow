@@ -2,9 +2,9 @@ spring:
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
   datasource:
-    url: jdbc:postgresql://localhost:5433/shopnow_products
-    username: lol
-    password: lol
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/shopnow_products}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
   jpa:
     hibernate:
       ddl-auto: none
@@ -12,8 +12,10 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: Product Service
 jwt:
-  secret: shopnowsupersecretkey1234567890555555
-  expiration: 11111  # 1 day in ms
+  secret: ${JWT_SECRET:}
+  expiration: 86400000  # 1 day in ms (24 hours)
 server:
   port: 8082
