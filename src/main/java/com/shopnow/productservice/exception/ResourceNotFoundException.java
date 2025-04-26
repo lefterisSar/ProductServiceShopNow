@@ -2,6 +2,8 @@ package com.shopnow.productservice.exception;
 
 import org.springframework.http.HttpStatus;
 
+import java.util.UUID;
+
 /**
  * Exception thrown when a requested resource is not found.
  */
@@ -22,7 +24,7 @@ public class ResourceNotFoundException extends ApiException {
      * @param resourceType the type of resource that was not found (e.g., "Product")
      * @param id the identifier of the resource that was not found
      */
-    public ResourceNotFoundException(String resourceType, String id) {
+    public ResourceNotFoundException(String resourceType, UUID id) {
         super(resourceType + " not found with id: " + id, HttpStatus.NOT_FOUND);
     }
     

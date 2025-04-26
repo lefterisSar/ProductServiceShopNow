@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Service for managing products.
@@ -41,9 +42,16 @@ public class ProductService {
      * @return a list of all products
      */
     public List<Product> getAllProducts() {
-        return repository.findAll();
+        try {
+            System.out.println("Fetching products...");
+            List<Product> products = repository.findAll();
+            System.out.println("Fetched products: " + products);
+            return products;
+        } catch (Exception e) {
+            e.printStackTrace(); // 👈 THIS WILL PRINT EXACT ERROR
+            throw new RuntimeException("Failed fetching products: " + e.getMessage());
+        }
     }
-
     /**
      * Retrieves a product by its ID.
      *
@@ -51,8 +59,8 @@ public class ProductService {
      * @return the product with the specified ID
      * @throws ResourceNotFoundException if no product is found with the specified ID
      */
-    public Product getProductById(String id) {
-        return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Product", id));
+    public Product getProductById(UUID id) {
+        return repository.findById((id))
+                .orElseThrow(() -> new ResourceNotFoundException("Product",id));
     }
 }
